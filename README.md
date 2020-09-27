@@ -11,6 +11,10 @@ CREATE TABLE `urls` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;'
 ```
+Также необходимо в коде main заменить строку (пароль и имя своей таблицы)
+```go
+Db, err = sql.Open("mysql", "root:<password>@/<table_name>")
+```
 ### Сокращение ссылок
 Для сокращения ссылки пользователь должен передать отправить запрос следующего вида
 `http://localhost:8000/url` параметром `POST` и JSON вида `{"lurl": "https://www.avito.ru"}`
